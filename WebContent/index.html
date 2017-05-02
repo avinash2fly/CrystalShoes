@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+	  <title>Crystal Shoes</title>
+	  <link rel="stylesheet" href="css/style.css">
+	  <script src="js/jquery-2.2.4.min.js"></script>
+	  <script src="js/scripts.js"></script>
+      
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMVu0ix7LgBN5Opza68gKs0TF1T6TOoCw&callback=initMap">
+    </script>
+    <script src="js/map.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+	</head>
+
+	<body>
+		<div class="overlay" id="overlay">
+			<script>
+				$("#overlay").click(function(){
+					setTimeout(function(){
+						$("#overlay").fadeOut();
+					},300)
+				});
+			</script>	
+		</div>
+		<div class="nav">
+			
+			<div style="float: left; border-radius:50%; width:40px; margin: 5px; margin-left: 35px">
+                <img src="http://www.stopkentviolence.org/wp-content/uploads/2015/11/dvccrt_logo.png" alt="Scott Stevens" class="img-responsive img-circle" />
+            </div>
+            <h1 style="float:left; margin-top: 6px; color: #FFF; font-size: 33px; font-family: Tahoma;">Crystal Shoes</h1>
+			<div style="float: right; border-radius:50%; width:40px; margin: 5px; margin-right: 15px">
+                <img src="imgs/ekaterina.png" alt="Scott Stevens" class="img-responsive img-circle" />
+            </div>
+        </div>
+		<!-- contact list -->
+		<div class="contactList">
+
+			<!-- search bar -->
+			<div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Search Contact" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+			<!-- contact group -->
+			<ul class="list-group" id="contact-list">
+                    <li class="list-group-item" style="background-color: #F3F3F3">
+                        <div class="col-xs-12 col-sm-4" >
+                            <img src="imgs/v0.png" alt="Scott Stevens" class="img-responsive img-circle" style="border: 3px solid; border-color: #FD6D36; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Julie Elliott</span><br/>
+                            <div class="contact_subtext" style="color: #9D9D9D">My husband hit me hard </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-4">
+                            <img src="http://www.someplacesafe.info/Melissa%20Black%20Profile%20Pic.jpg" alt="Seth Frazier" class="img-responsive img-circle" style="border: 3px solid; border-color: #D33053; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Rose Frazier</span><br/>
+                            <div class="contact_subtext">I need help urgently .. </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-4">
+                            <img src="https://s-media-cache-ak0.pinimg.com/736x/db/17/22/db1722926fe5e778f750002f1f9c8598.jpg" alt="Jean Myers" class="img-responsive img-circle" style="border: 3px solid; border-color: #FD6D36; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Jean Myers</span><br/>
+                            <div class="contact_subtext">I got isolated from .. </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-4">
+                            <img src="https://longhaircareforum.com/data/avatars/m/131/131472.jpg?1428182207" alt="Todd Shelton" class="img-responsive img-circle" style="border: 3px solid; border-color: #FD6D36; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Lauren Shelton</span><br/>
+                            <div class="contact_subtext">I really love him, but .. </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-4">
+                            <img src="https://68.media.tumblr.com/avatar_5ffdca7de8b1_128.png" alt="Rosemary Porter" class="img-responsive img-circle" style="border: 3px solid; border-color: #FD6D36; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Rosemary Porter</span><br/>
+                            <div class="contact_subtext">This is happened again .. </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-4">
+                            <img src="imgs/v1.png" alt="Debbie Schmidt" class="img-responsive img-circle" style="border: 3px solid; border-color: #FD6D36; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Tracy Schmidt</span><br/>
+                            <div class="contact_subtext">He is a horrible guy .. </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-4">
+                            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2016-06/3/3/enhanced/buzzfeed-prod-fastlane01/grid-cell-5628-1464940781-10.jpg" alt="Glenda Patterson" class="img-responsive img-circle" style="border: 3px solid; border-color: #FD6D36; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Glenda Patterson</span><br/>
+                            <div class="contact_subtext">I can't stand this .. </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-4">
+                            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRN9t-PuQv8u6_txbsrAGpjjolYlFOmQGwVo4IMgqq93Ov0HyUZiA" alt="Glenda Patterson" class="img-responsive img-circle" style="border: 3px solid; border-color: #FD6D36; border-radius: 50%;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <span class="name">Vicki Smith</span><br/>
+                            <div class="contact_subtext">I need to talk to .. </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    
+
+                </ul>
+		</div> 
+		<div id="mapid" class="map"></div>
+			<div class="resourcesGroups ">
+
+				<div class="container" >
+					<div  class="row" >
+						<button type="button" class="btn btnResources" onclick="updateSelection('btnCounsellor')" data-selected="0" id = "btnCounsellor" >Counsellor</button>
+					</div>
+					<div class="row">
+						<button type="button" class=" btn btnResources" onclick="updateSelection('btnFinancial')" data-selected="0" id ="btnFinancial">Financial</button>
+					</div>
+					<div class="row">
+						<button type="button" class=" btn btnResources" onclick="updateSelection('btnLegal')" data-selected="0" id ="btnLegal">Legal</button>
+					</div>
+					<div class="row" >
+						<button type="button" class=" btn btnResources" onclick="updateSelection('btnSexAbuse')" data-selected="0" id ="btnSexAbuse">Sex Abuse</button>
+					</div>
+				</div>
+				<div style="margin-left: 15px; margin-top: 25px; height: 60px;">
+					<img src="imgs/new_member.png" id="new_member_img" style="display: none; width: 80px; margin-top: 10px; margin-left: 15px;">
+				</div>
+				<div class="container" style="margin-top: -8px;">
+					<div class="row">
+						<button type="button" class="btn btnResources" onclick="updateSelection('btnSendInvite')" data-selected="0" id = "btnSendInvite" >Team Request</button>
+						<script>
+							$("#btnSendInvite").click(function(){
+								setTimeout(function(){
+									$("#new_member_img").slideDown();
+								},1000)
+							});
+						</script>script>
+					</div>
+				</div>
+				
+			</div>
+		<div class="chatBox"><div class="chat_window">
+    
+    <ul class="messages"></ul>
+    <div class="bottom_wrapper clearfix">
+        <div class="message_input_wrapper">
+            <input class="message_input" placeholder="Type your message here..." />
+        </div>
+        <div class="send_message">
+            <div class="icon"></div>
+            <div class="text">Send</div>
+        </div>
+    </div>
+    <div class="message_template">
+    <li class="message">
+        <div class="avatar"></div>
+        <div class="text_wrapper">
+            <div class="text"></div>
+        </div>
+    </li>
+</div>
+</div></div>
+		<div class="person">
+			<div class="victimDetails">
+				</br>
+				<div style="width: 40%; margin:auto; border: 8px solid; border-radius: 50%; border-color: #FD6D36">
+					<img src="imgs/v0.png" alt="Victim" class="img-responsive img-circle" />
+					
+					
+				</div >
+				</br>
+				<div class="row" style="width: 100%; margin-left:6%">
+
+					<div class="col-xs-12 col-sm-4">
+						<img src="imgs/phone.png" alt="Phone Victim" height="40"/>
+					</div>
+
+					<div class="col-xs-12 col-sm-4">
+						<img src="imgs/video.png" alt="Video Victim" height="40"/>
+					</div>
+
+					<div class="col-xs-12 col-sm-4">
+						<img  src="imgs/emergency.png" onclick="contactEmergency()" alt="Video Victim" height="40"/>
+					</div>	
+
+				</div>
+
+				
+
+				<div id="container_id" class="container" style="margin: auto; width: 100%">
+					</br>
+					<p style="color:#9D9D9D; font-size: 13px"> <b>Kate</b> wrote on 15/3/2015, 7:20<p>
+					<p> Got a call from Mary. She talked to husband. He was responsive and agreed to not to drink more than 1 pint anymore.</p>
+					<p></p>
+					<p style="color:#9D9D9D; font-size: 13px"> <b>Kate</b> wrote on 10/4/2017, 9:17<p>
+					<p> Mary got hit by husband again, he got even more agressive</p>
+					<p></p>
+					<p>
+					Might be good time to bring in councellor.</p>
+					<p></p>
+
+					<div id="textPostHere" style="height: 100px"></div>
+					<div class="textarea-container">
+					  <textarea id="commentId" name="foo" placeholder="Comments for action..."></textarea>
+					  <button class="btn" style="border-radius: 24px; margin-right: 10px;" onclick="addComment()">Post</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

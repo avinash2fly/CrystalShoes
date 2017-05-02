@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #mapid {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapid"></div>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+        var myLatLng_2 = {lat: -25.365, lng: 130.044};
+
+        // var image = {
+        //   url: 'file:///Users/elonliu/Developer/hack2017/dv/DVHelper/imgs/ellon.png',
+        //   // This marker is 20 pixels wide by 32 pixels high.
+        //   size: new google.maps.Size(20, 32)
+        //   // // The origin for this image is (0, 0).
+        //   // origin: new google.maps.Point(0, 0),
+        //   // // The anchor for this image is the base of the flagpole at (0, 32).
+        //   // anchor: new google.maps.Point(0, 32)
+        // };
+
+        var image = 'imgs/ellon1.png';
+
+        var map = new google.maps.Map(document.getElementById('mapid'), {
+          zoom: 4,
+          center: myLatLng
+        });
+        var beachMarker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: image
+        });
+
+        // var beachMarker = new google.maps.Marker({
+        // position: myLatLng_2,
+        // map: map
+        // //icon: image2
+        // });
+
+        // var marker = new google.maps.Marker({
+        //   position: myLatLng,
+        //   map: map,
+        //   icon: image
+        //   title: 'Hello World!'
+        // });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMVu0ix7LgBN5Opza68gKs0TF1T6TOoCw&callback=initMap">
+    </script>
+  </body>
+</html>
